@@ -1,0 +1,44 @@
+# Angular/Typescript exclusions
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+*.env
+*.env.*
+.angular/
+.angular/cache/
+/tmp
+/out-tsc
+/bazel-out
+.sass-cache/
+/connect.lock
+/coverage
+testem.log
+/typings
+
+# Java/Spring Boot exclusions
+target/
+*.class
+*.log
+.factorypath
+.mvn/
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.kilocode/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# System files
+.DS_Store
+Thumbs.db
