@@ -1,0 +1,24 @@
+<div class="weather-search">
+  <h2>Weather Search</h2>
+  <input [(ngModel)]="cityInput" placeholder="Enter city name" />
+  <button (click)="searchWeather()" [disabled]="loading()">Search</button>
+
+  @if (loading()) {
+    <div class="loading">Loading...</div>
+  }
+
+  @if (weatherData() && !loading()) {
+    <div class="weather-result">
+    <h3>{{ weatherData()?.city }}</h3>
+    <p>Temperature: {{ weatherData()?.forecast[0].temperature }}°C</p>
+    <p>Description: {{ weatherData()?.forecast[0].description }}</p>
+    <p>Humidity: {{ weatherData()?.forecast[0].humidity }}%</p>
+    <p>Wind Speed: {{ weatherData()?.forecast[0].windSpeed }} m/s</p>
+    <p>Localtime: {{ weatherData()?.forecast[0].timestamp | date:'medium' }}</p>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="error">{{ error() }}</div>
+  }
+</div>
